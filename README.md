@@ -29,3 +29,10 @@ https://www.emolecules.com/
 
 https://www.rdkit.org/
 ---------------------------------
+
+texts that might be useful-- 
+https://www.amazon.com/Statistical-Mechanics-…/…/ref=sr_1_1…
+
+https://www.amazon.com/Understanding-Molecula…/…/ref=sr_1_2…
+
+https://www.amazon.com/Tutorials-Chemoinformatics-Alexandre-Varnek/dp/1119137969/ref=sr_1_1?ie=UTF8&qid=1547747839&sr=8-1&keywords=tutorials+in+chemoinformatics
