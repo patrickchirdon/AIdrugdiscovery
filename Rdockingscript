@@ -1,0 +1,46 @@
+Pocket1<-read.delim("~/Desktop/data/reportcardtoby1.dat",sep="\t",header=TRUE)
+colnames(Pocket1)<-c("Total_Score","Delta_X","LigandReceptorPair")
+Pocket1<-Pocket1[-1,]
+
+
+Pocket2<-read.delim("~/Desktop/data/reportcardpocket2.dat",sep="\t",header=TRUE)
+colnames(Pocket2)<-c("Total_Score","Delta_X","LigandReceptorPair")
+Pocket2<-Pocket2[-1,]
+
+
+Pocket3<-read.delim("~/Desktop/data/reportcardpocket3.dat",sep="\t",header=TRUE)
+colnames(Pocket3)<-c("Total_Score","Delta_X","LigandReceptorPair")
+Pocket3<-Pocket3[-1,]
+
+
+Pocket4<-read.delim("~/Desktop/data/reportcardpocket4.dat",sep="\t",header=TRUE)
+colnames(Pocket4)<-c("Total_Score","Delta_X","LigandReceptorPair")
+Pocket4<-Pocket4[-1,]
+
+Pocket5<-read.delim("~/Desktop/data/reportcardpocket5.dat",sep="\t",header=TRUE)
+colnames(Pocket5)<-c("Total_Score","Delta_X","LigandReceptorPair")
+Pocket5<-Pocket5[-1,]
+
+MyPocket3<-read.delim("~/Desktop/data/reportcardmypocket3.dat",sep="\t",header=TRUE)
+colnames(MyPocket3)<-c("Total_Score","Delta_X","LigandReceptorPair")
+MyPocket3<-MyPocket3[-1,]
+
+
+test<-merge(Pocket1,Pocket2,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket1","Pocket2")) 
+test<-merge(test,Pocket3,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("x","Pocket3")) 
+test<-merge(test,Pocket4,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket3","Pocket4")) 
+test<-merge(test,Pocket5,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("x","Pocket5")) 
+test<-merge(test,MyPocket3,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket5","MyPocket3")) 
+
+
+test2<-merge(Pocket1,Pocket3,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket1","Pocket3"))
+test3<-merge(Pocket1,Pocket4,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket1","Pocket4"))
+test4<-merge(Pocket1,Pocket5,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket1","Pocket5"))
+test5<-merge(Pocket1,MyPocket3,by.x="LigandReceptorPair",by.y="LigandReceptorPair",suffixes = c("Pocket1","MyPocket3"))
+
+write.csv(test,file="~/Desktop/data/AllPocketScores.csv")
+library(ggplot2)
+
+plot(ggplot(test,aes(y=Delta_XPocket1,x=Delta_XPocket2)) + geom_point()+geom_smooth(method=lm,colour="blue"))
+lm(data=test, Delta_XPocket1~Delta_XPocket2)
+
