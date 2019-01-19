@@ -25,11 +25,19 @@ Chemicalize-- https://chemicalize.com/
 Useful for obtaining the IUPAC names of SMILES
 
 
+Open Babel--
+https://openbabel.org/docs/dev/Installation/install.html
+
+necessary for converting SMILES into 3D representations (note must use --gen3D).  Rosetta parameterizes .mol2 files
+
+
 Also Useful--
 
 https://www.emolecules.com/
+library of virtual compounds
 
 https://www.rdkit.org/
+useful for computing tanimoto coefficients and molecular descriptors. 
 ---------------------------------
 
 texts that might be useful-- 
