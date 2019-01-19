@@ -1,26 +1,28 @@
 # AIdrugdiscovery
 Docking-- https://www.rosettacommons.org/
+see wiki
 
 
 ADME-- http://www.swissadme.ch/index.php
-
+see wiki
 
 SEA search server-- http://sea.bkslab.org/
-
+see wiki
 
 Data Warrior-- http://www.openmolecules.org/datawarrior/
-
+see wiki
 
 SPACE-- http://www.bprc.ac.cn/space/
 
 
 EPA TEST-- https://www.epa.gov/chemical-research/toxicity-estimation-software-tool-test
-
+see wiki
 
 Emoltox-- http://xundrug.cn/moltox
 
 
 Chemicalize-- https://chemicalize.com/
+Useful for obtaining the IUPAC names of SMILES
 
 
 Also Useful--
