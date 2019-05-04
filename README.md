@@ -1,12 +1,30 @@
 NIH.py	screen compounds for pan assay interference, fraction of sp3 hybridized carbons (>.47 is good), and total polar surface area
+
+
 Rdockingscript	read rosetta output into r data frames
+
+
 chirdonmontecarlo.py	my attempt at a monte carlo simulation of a NPT system of 256 molecules in a box
+
+
 dockcopy.xml	required by rosetta for protein ligand docking
+
+
 docking.sh	shell script for submitting rosetta docking jobs
+
+
 fragmenter.py	fragment compounds into parts and recombine them.  useful when you know what binds well, take those compounds and fragment them and recombine to bet better ones.  also good for making new compounds from existing data bases.
+
+
 moleculardynamicshw2.py molecular dynamics of NVT system of 256 molecules, lennard jones
+
+
 moleculardynamicshw4.py	molecular dynamics, lennard jones
+
+
 solubility.csv	required by solubilitypredict.py
+
+
 solubilitypredict.py  can predict aqueous solubility of compounds in water.
 
 
