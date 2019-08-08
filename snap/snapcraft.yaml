@@ -14,8 +14,23 @@ parts:
     source: .
     stage-packages:
       - python-six
-      -python-pip
-      
+      - python-pip
+    plugin: conda
+    
+    conda-packages:
+      - rdkit
+      - PySimpleGUI
+      - IPython
+      - matplotlib
+      - sklearn
+      - pytorch
+      - tables
+      - keras
+      - tensorflow
+      - nbformat
+      - nbconvert
+  
+
 
 apps:
   offlineimap:
