@@ -9,15 +9,18 @@ base: core18
 
 parts:
   offlineimap:
-   
+    
+    
     plugin: conda
     
     conda-packages:
-      - rdkit
+      - rdkit/rdkit
+      - koraltp/PySimpleGUI
+      - contango/sklearn
       - PySimpleGUI
       - IPython
       - matplotlib
-      - sklearn
+      
       - pytorch
       - tables
       - keras
