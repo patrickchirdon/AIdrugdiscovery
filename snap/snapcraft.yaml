@@ -14,17 +14,19 @@ parts:
     source: .
     stage-packages:
       - python-six
-      - python-PySimpleGUI
-      -python-IPython
-      -python-matplotlib
-      -python-sklearn
-      -python-torch
-      -python-tables
-      -python-keras
-      -python-tensorflow
-      -python-nbformat
-      -python-nbconvert
+      - PySimpleGUI
+      -IPython
+      -matplotlib
+      -sklearn
+      -pytorch
+      -tables
+      -keras
+      -tensorflow
+      -nbformat
+      -nbconvert
+      -runipy
+      -rdkit
 
 apps:
   offlineimap:
-    command: bin/offlineimap
+    command: bin/aidrugdiscovery
