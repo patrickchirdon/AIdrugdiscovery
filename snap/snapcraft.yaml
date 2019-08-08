@@ -24,6 +24,7 @@ parts:
       - tensorflow
       - nbformat
       - nbconvert
+      - runipy
   
 
 
