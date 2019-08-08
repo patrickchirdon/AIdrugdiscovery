@@ -9,12 +9,7 @@ base: core18
 
 parts:
   offlineimap:
-    plugin: python
-    python-version: python3
-    source: .
-    stage-packages:
-      - python-six
-      - python-pip
+   
     plugin: conda
     
     conda-packages:
