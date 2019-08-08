@@ -8,15 +8,16 @@ confinement: devmode
 base: core18
 
 parts:
+  
   offlineimap:
     
-    
+    source: https://github.com/rdkit/rdkit.git
+    source: https://github.com/PySimpleGUI/PySimpleGUI.git
+    source: https://github.com/scikit-learn/scikit-learn.git
     plugin: conda
     
     conda-packages:
-      - rdkit/rdkit
-      - koraltp/PySimpleGUI
-      - contango/sklearn
+     
       - PySimpleGUI
       - IPython
       - matplotlib
