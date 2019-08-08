@@ -18,7 +18,7 @@ parts:
     
     conda-packages:
      
-      - PySimpleGUI
+     
       - IPython
       - matplotlib
       
