@@ -14,18 +14,8 @@ parts:
     source: .
     stage-packages:
       - python-six
-      - PySimpleGUI
-      -IPython
-      -matplotlib
-      -sklearn
-      -pytorch
-      -tables
-      -keras
-      -tensorflow
-      -nbformat
-      -nbconvert
-      -runipy
-      -rdkit
+      -python-pip
+      
 
 apps:
   offlineimap:
