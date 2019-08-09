@@ -7,11 +7,12 @@ confinement: strict
 
 apps:
   rdkit:
-    command: rdkit
+    command: mygui
 
 parts:
-  gnu-hello:
+  rdkit:
     plugin: autotools
     source: https://github.com/rdkit/rdkit.git
+  
     
     
