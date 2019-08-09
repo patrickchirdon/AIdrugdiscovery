@@ -6,16 +6,19 @@ grade: stable
 confinement: strict
 plugin: conda
 conda-packages:
-  - pytorch
+  - conda-build
+  - numpy
+  - matplotlib
+  - cmake
+  - cairo
+  - pillow
+  - eigen
+  - pkg-config
+  - boost-cpp
+  - boost
+  - pyboost
+  - rdkit
   
-apps:
-  rdkit:
-    command: mygui
+  
 
-parts:
-  rdkit:
-    plugin: autotools
-    source: https://github.com/rdkit/rdkit.git
-  
-    
     
