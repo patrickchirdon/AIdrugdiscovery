@@ -1,21 +1,21 @@
 name: aidrugdiscovery
-version: git
+version: "1"
 summary: toolkit
-description: |
-  chemoinformatics toolkit
+description: chemoinformatics toolkit
+grade: stable
+confinement: strict
 
-confinement: devmode
-base: core18
+apps:
+  bmetoolkit:
+    command: bmetoolkit
 
 parts:
-  
-  offlineimap:
-    
+  gnu-hello:
+    plugin: autotools
     source: https://github.com/rdkit/rdkit.git
     source: https://github.com/PySimpleGUI/PySimpleGUI.git
     source: https://github.com/scikit-learn/scikit-learn.git
-    plugin: conda
-    
+
     conda-packages:
      
      
