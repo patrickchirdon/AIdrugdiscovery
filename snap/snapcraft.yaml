@@ -6,8 +6,8 @@ grade: stable
 confinement: strict
 
 apps:
-  hello:
-    command: hello
+  rdkit:
+    command: rdkit
 
 parts:
   gnu-hello:
