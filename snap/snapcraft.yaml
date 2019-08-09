@@ -1,36 +1,17 @@
-name: aidrugdiscovery
-version: "1"
-summary: toolkit
-description: chemoinformatics toolkit
+name: hello
+version: "2.10"
+summary: GNU Hello, the "hello world" snap
+description: GNU Hello prints a friendly greeting.
 grade: stable
 confinement: strict
 
 apps:
-  bmetoolkit:
-    command: bmetoolkit
+  hello:
+    command: hello
 
 parts:
   gnu-hello:
     plugin: autotools
     source: https://github.com/rdkit/rdkit.git
     
-    plugin: conda
-    conda-packages:
-     
-     
-      - IPython
-      - matplotlib
-      
-      - pytorch
-      - tables
-      - keras
-      - tensorflow
-      - nbformat
-      - nbconvert
-      - runipy
-  
-
-
-apps:
-  offlineimap:
-    command: bin/aidrugdiscovery
+    
