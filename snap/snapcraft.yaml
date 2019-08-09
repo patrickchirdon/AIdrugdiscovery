@@ -4,7 +4,10 @@ summary: GNU Hello, the "hello world" snap
 description: GNU Hello prints a friendly greeting.
 grade: stable
 confinement: strict
-
+plugin: conda
+conda-packages:
+  - pytorch
+  
 apps:
   rdkit:
     command: mygui
