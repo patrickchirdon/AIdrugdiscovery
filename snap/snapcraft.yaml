@@ -1,7 +1,7 @@
 name: aidrugdiscovery
-version: "2.10"
-summary: GNU Hello, the "hello world" snap
-description: GNU Hello prints a friendly greeting.
+version: "1"
+summary: chemoinformatics toolkit
+description: chemoinformatics toolkit
 grade: stable
 confinement: strict
 plugin: conda
@@ -17,7 +17,12 @@ conda-packages:
   - boost-cpp
   - boost
   - pyboost
-  - rdkit
+parts:
+  aidrugdiscovery:
+  prepare: ./bmetoolkit
+  
+  
+  
   
   
 
