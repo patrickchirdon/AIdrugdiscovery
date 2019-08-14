@@ -19,6 +19,9 @@ conda-packages:
   - pyboost
 parts:
   aidrugdiscovery:
+  plugin: dump
+  source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+  source-type: git
   prepare: ./bmetoolkit
   
   
