@@ -10,7 +10,10 @@ parts:
   plugin: dump
   source: https://github.com/patrickchirdon/AIdrugdiscovery.git
   source-type: git
-  prepare: ./bmetoolkit
+  override-build: |
+    ./bmetoolkit
+    ./bmetoolkit1.0.sh
+    snapcraftctl build
   
   
   
