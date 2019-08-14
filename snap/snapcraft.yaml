@@ -4,19 +4,6 @@ summary: chemoinformatics toolkit
 description: chemoinformatics toolkit
 grade: stable
 confinement: strict
-plugin: conda
-conda-packages:
-  - conda-build
-  - numpy
-  - matplotlib
-  - cmake
-  - cairo
-  - pillow
-  - eigen
-  - pkg-config
-  - boost-cpp
-  - boost
-  - pyboost
 parts:
   aidrugdiscovery:
   plugin: dump
