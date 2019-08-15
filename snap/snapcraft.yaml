@@ -1,42 +1,20 @@
-name: aidrugdiscovery # you probably want to 'snapcraft register <name>'
-base: core18 # the base snap is the execution environment for this snap
-version: '1.0' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Batch image resizer with a GUI # 79 char long summary
+name: AIdrugdiscovery
+version: git
+summary: AIdrugdiscovery
 description: |
-  OpenResizer is an open-source batch image resizing software with a GUI.
-  It is designed to be fast and easy-to-use.
-
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
-
-icon: IRF3.jpg
-
-architectures:
-  - build-on: [amd64, i386]
-    run-on: all
+  AIdrugdiscovery
+base: core18
+confinement: devmode
 
 
 parts:
-
-  
-  main-part:
-    # See 'snapcraft plugins'
+  test-offlineimap:
     plugin: python
-    python-packages:
-      - pillow
+    python-version: python3
+    source: .
     stage-packages:
-      - python-gi
-  
+      - python-six
 
-
-plugs:
- gnome-3-26-1604:
-   interface: content
-   target: gnome-platform
-   default-provider: gnome-3-26-1604:gnome-3-26-1604
-
-
-  
-  
-
-    
+apps:
+  test-offlineimap:
+    command: bin/aidrugdiscovery
