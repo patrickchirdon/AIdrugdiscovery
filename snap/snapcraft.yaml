@@ -1,4 +1,4 @@
-name: openresizer # you probably want to 'snapcraft register <name>'
+name: AIdrugdiscovery # you probably want to 'snapcraft register <name>'
 base: core18 # the base snap is the execution environment for this snap
 version: '1.0' # just for humans, typically '1.2+git' or '1.3.2'
 summary: Batch image resizer with a GUI # 79 char long summary
@@ -31,13 +31,13 @@ parts:
 
   openresizer:
     plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+    source: https://github.com/jrezai/openresizer.git
     source-type: git
     after: [desktop-gtk3]
     organize:
       glade_files: bin/glade_files
-    override-build:
-      chmod +x bin/bmetoolkit1.0.sh
+    prepare: |
+      chmod +x bin/openresizer.py
 
 
 plugs:
@@ -49,7 +49,7 @@ plugs:
 
 apps:
   openresizer:
-    command: desktop-launch $SNAP/bin/bmetoolkit1.0.sh
+    command: desktop-launch $SNAP/bin/openresizer.py
     plugs: [gnome-3-26-1604, x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home, removable-media]
   
   
