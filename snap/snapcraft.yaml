@@ -36,11 +36,6 @@ plugs:
    default-provider: gnome-3-26-1604:gnome-3-26-1604
 
 
-apps:
-  openresizer:
-    command: desktop-launch $SNAP/bmetoolkit1.0.sh
-    plugs: [gnome-3-26-1604, x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home, removable-media]
-  
   
   
 
