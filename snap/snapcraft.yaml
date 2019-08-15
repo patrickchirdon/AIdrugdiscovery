@@ -1,23 +1,14 @@
-name: aidrugdiscovery
-version: git
-summary: aidrugdiscovery
-description: |
-  AIdrugdiscovery
-base: core18
-confinement: devmode
-
-
-parts:
-  test-offlineimap:
-    plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
-    source-type: git
-    
-    override-build: |
-      snapcraftctl build
-      chmod +x bmetoolkit
-      ./bmetoolkit
+name:           aidrugdiscovery
+version:        1.0
+summary:        Example python snap app
+description:    Example python snap app
+confinement:    devmode
+grade:          stable
 
 apps:
-  test-offlineimap:
-    command: bin/aidrugdiscovery
+  mygreatapp:
+    command:    aidrugdiscovery
+
+parts:
+  mygreatapp:
+    plugin:     python
