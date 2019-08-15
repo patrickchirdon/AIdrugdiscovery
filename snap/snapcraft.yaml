@@ -1,28 +1,84 @@
 name: aidrugdiscovery # you probably want to 'snapcraft register <name>'
-#base: core18 # the base snap is the execution environment for this snap
+base: core18 # the base snap is the execution environment for this snap
 version: '1.0' # just for humans, typically '1.2+git' or '1.3.2'
 summary: Batch image resizer with a GUI # 79 char long summary
 description: |
-  aidrugdiscovery
+  OpenResizer is an open-source batch image resizing software with a GUI.
+  It is designed to be fast and easy-to-use.
 
-grade: stable
-confinement: classic
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+
 
 architectures:
-  - build-on: i386
-    run-on: [amd64, i386]
+  - build-on: [amd64, i386]
+    run-on: all
+
 
 parts:
-  aidrugdiscovery:
-    source: .
-    plugin: dump
+
+  desktop-gtk3:
+    build-packages:
+    - build-essential
+    - libgtk-3-dev
+    make-parameters:
+    - FLAVOR=gtk3
+    plugin: make
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: gtk
     stage-packages:
-    - python
-    
-      
+    - libxkbcommon0
+    - ttf-ubuntu-font-family
+    - dmz-cursor-theme
+    - light-themes
+    - adwaita-icon-theme
+    - gnome-themes-standard
+    - shared-mime-info
+    - libgtk-3-0
+    - libgdk-pixbuf2.0-0
+    - libglib2.0-bin
+    - libgtk-3-bin
+    - unity-gtk3-module
+    - libappindicator3-1
+    - locales-all
+    - xdg-user-dirs
+    - ibus-gtk3
+    - libibus-1.0-5
+    - fcitx-frontend-gtk3
+
+
+
+  main-part:
+    # See 'snapcraft plugins'
+    plugin: python
+    python-packages:
+      - pillow
+    stage-packages:
+      - python-gi
+   
     
 
+  openresizer:
+    plugin: dump
+    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+    source-type: git
+    after: [desktop-gtk3]
+    organize:
+      glade_files: bin/glade_files
+    prepare: |
+      chmod +x bin/bmetoolkit.sh
+
+
+plugs:
+ gnome-3-26-1604:
+   interface: content
+   target: gnome-platform
+   default-provider: gnome-3-26-1604:gnome-3-26-1604
+
+
 apps:
-  aidrugdiscovery:
-    command: bin/desktop-launch $SNAP/bmetoolkit.sh
-    plugs: [x11, desktop]
+  openresizer:
+    command: desktop-launch $SNAP/bin/bmetoolkit.sh
+    plugs: [gnome-3-26-1604, x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home, removable-media]
+
