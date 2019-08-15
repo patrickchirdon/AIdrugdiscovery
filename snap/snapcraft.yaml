@@ -21,7 +21,7 @@ parts:
     - python
     prepare: |
       chmod +x bin/bmetoolkit.sh
-      chmod +x bin/bmetoolkit1.0.sh
+      
     
 
 apps:
