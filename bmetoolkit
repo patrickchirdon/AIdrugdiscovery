@@ -1,4 +1,5 @@
 #!/bin/bash
+curl -O https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 sh Anaconda3-2019.07-Linux-x86_64.sh
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
