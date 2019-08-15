@@ -23,5 +23,5 @@ parts:
 
 apps:
   aidrugdiscovery:
-    command: sh ../bmetoolkit.sh 
+    command: desktop-launch $SNAP/bmetoolkit.sh
     plugs: [x11, desktop]
