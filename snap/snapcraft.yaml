@@ -15,15 +15,7 @@ parts:
       -PySimpleGUI
   
   
-  
-  
-  aidrugdiscovery:
-    plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
-    source-type: git
-    override-build: |
-      ./bmetoolkit
-      snapcraftctl build
+
  plugs:
   gnome-3-26-1604:
     interface: content
