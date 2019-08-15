@@ -6,7 +6,7 @@ description: |
   aidrugdiscovery
 
 grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: devmode # use 'strict' once you have the right plugs and slotshttps://github.com/patrickchirdon/AIdrugdiscovery/blob/master/snap/snapcraft.yaml
 
 
 architectures:
@@ -23,5 +23,5 @@ parts:
 
 apps:
   aidrugdiscovery:
-    command: sh bmetoolkit.sh
+    command: chmod +x bmetoolkit.sh && sh bmetoolkit.sh
     plugs: [x11, desktop]
