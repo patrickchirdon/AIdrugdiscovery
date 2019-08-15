@@ -1,6 +1,6 @@
-name: AIdrugdiscovery
+name: aidrugdiscovery
 version: git
-summary: AIdrugdiscovery
+summary: aidrugdiscovery
 description: |
   AIdrugdiscovery
 base: core18
