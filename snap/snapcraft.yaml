@@ -14,28 +14,14 @@ architectures:
     run-on: all
 
 parts:
-
-  main-part:
-    
-    # See 'snapcraft plugins'
-    plugin: python
-    python-version: python3
-
-    stage-packages:
-      - python3-pil
-      - python3-gi
-
-  wrapper:
+  movies:
+    source: .
     plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
-    source-type: git
-    after: [desktop-bmetoolkit]
-    prepare: |
-      chmod +x bmetoolkit.sh
-
-
+    stage-packages:
+    - python
+    - conda
 
 apps:
-  openresizer:
-    command: desktop-launch $SNAP/bmetoolkit.sh
+  aidrugdiscovery:
+    command: bmetoolkit.sh
     plugs: [x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home]
