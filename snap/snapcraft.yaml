@@ -23,5 +23,5 @@ parts:
 
 apps:
   aidrugdiscovery:
-    command: sh bin/bmetoolkit.sh 
+    command: sh ../bmetoolkit.sh 
     plugs: [x11, desktop]
