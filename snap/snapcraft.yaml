@@ -64,8 +64,6 @@ parts:
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
     after: [desktop-gtk3]
-    organize:
-      glade_files: bin/glade_files
     prepare: |
       chmod +x bin/bmetoolkit.sh
 
@@ -80,5 +78,5 @@ plugs:
 apps:
   openresizer:
     command: desktop-launch $SNAP/bin/bmetoolkit.sh
-    plugs: [gnome-3-26-1604, x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home, removable-media]
+    plugs: [gnome-3-26-1604, x11, desktop]
 
