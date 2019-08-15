@@ -14,7 +14,7 @@ architectures:
     run-on: all
 
 parts:
-  movies:
+  aidrugdiscovery:
     source: .
     plugin: dump
     stage-packages:
