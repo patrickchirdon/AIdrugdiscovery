@@ -26,20 +26,7 @@ parts:
       - pillow
     stage-packages:
       - python-gi
-   
-    
-
-  openresizer:
-    plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
-    source-type: git
-    after: [desktop-gtk3]
-    
-    override-build: |
-      chmod +x bmetoolkit
-      chmod +x bmetoolkit1.0.sh
-      ./bmetoolkit
-      snapcraftctl build
+  
 
 
 plugs:
