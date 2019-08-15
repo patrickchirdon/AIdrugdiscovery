@@ -23,5 +23,5 @@ parts:
 
 apps:
   aidrugdiscovery:
-    command: bmetoolkit.sh
+    command: sh bmetoolkit.sh
     plugs: [x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home]
