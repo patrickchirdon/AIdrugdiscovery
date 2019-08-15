@@ -9,7 +9,7 @@ base: core18
 
 apps:
   foo:
-    command: sh $SNAP/bmetoolkit
+    command: ./bmetoolkit
 
 parts:
   foo:
