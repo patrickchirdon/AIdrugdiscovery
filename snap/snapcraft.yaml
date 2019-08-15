@@ -10,8 +10,8 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 
 architectures:
-  - build-on: [amd64, i386]
-    run-on: all
+  - build-on: i386
+    run-on: [amd64, i386]
 
 parts:
   aidrugdiscovery:
