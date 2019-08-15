@@ -18,8 +18,7 @@ parts:
     plugin: dump
     stage-packages:
     - python
-    prepare: |
-      chmod +x bin/bmetoolkit.sh
+    
       
     
 
