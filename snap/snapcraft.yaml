@@ -19,9 +19,12 @@ parts:
     plugin: dump
     stage-packages:
     - python
+    prepare: |
+      chmod +x bin/bmetoolkit.sh
+      chmod +x bin/bmetoolkit1.0.sh
     
 
 apps:
   aidrugdiscovery:
-    command: desktop-launch $SNAP/bmetoolkit.sh
+    command: bin/desktop-launch $SNAP/bmetoolkit.sh
     plugs: [x11, desktop]
