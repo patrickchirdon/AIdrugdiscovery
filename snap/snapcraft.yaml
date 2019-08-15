@@ -13,18 +13,15 @@ parts:
     python-packages: 
       -IPython
       -PySimpleGUI
-  
-  
 
- plugs:
-  gnome-3-26-1604:
-    interface: content
-    target: gnome-platform
-    default-provider: gnome-3-26-1604:gnome-3-26-1604
- apps:
+
   aidrugdiscovery:
-    command: desktop-launch $SNAP/bin/bmetoolkit1.0.sh
-    plugs: [gnome-3-26-1604, x11, desktop, desktop-legacy]
+    plugin: dump
+    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+    source-type: git
+    override-build: |
+      ./bmetoolkit
+      snapcraftctl build
   
   
   
