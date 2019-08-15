@@ -6,9 +6,7 @@ base: core18
 grade: stable
 confinement: strict
 parts:
-  condapart:
-    plugin: conda
-    
+  
       
   mainpart:
     plugin: python
