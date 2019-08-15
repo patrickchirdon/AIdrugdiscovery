@@ -7,11 +7,13 @@ description: |
 confinement: devmode
 base: core18
 
-parts:
-  geekbench4:
-    plugin: dump
-    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
-
 apps:
-  aidrugdiscovery:
-    command: aidrugdiscovery
+  foo:
+    command: sh $SNAP/bmetoolkit
+
+parts:
+  foo:
+    source: .
+    plugin: dump
+    organize:
+            bmetoolkit: bmetoolkit
