@@ -23,6 +23,5 @@ parts:
 
 apps:
   aidrugdiscovery:
-    command: chmod +x bin/bmetoolkit.sh 
-    command: sh bin/bmetoolkit.sh
+    command: sh bin/bmetoolkit.sh 
     plugs: [x11, desktop]
