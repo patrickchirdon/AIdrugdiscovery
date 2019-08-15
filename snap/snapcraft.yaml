@@ -31,11 +31,11 @@ parts:
     source-type: git
     after: [desktop-bmetoolkit]
     prepare: |
-      chmod +x bmetoolkit
+      chmod +x bmetoolkit.sh
 
 
 
 apps:
   openresizer:
-    command: desktop-launch $SNAP/bmetoolkit
+    command: desktop-launch $SNAP/bmetoolkit.sh
     plugs: [x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home]
