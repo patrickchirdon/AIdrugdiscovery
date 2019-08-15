@@ -16,6 +16,7 @@ architectures:
 parts:
 
   main-part:
+    
     # See 'snapcraft plugins'
     plugin: python
     python-version: python3
