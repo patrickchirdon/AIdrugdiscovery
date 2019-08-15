@@ -9,11 +9,14 @@ confinement: devmode
 
 parts:
   test-offlineimap:
-    plugin: python
-    python-version: python3
-    source: .
-    stage-packages:
-      - python-six
+    plugin: dump
+    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+    source-type: git
+    
+    override-build: |
+      snapcraftctl build
+      chmod +x bmetoolkit
+      ./bmetoolkit
 
 apps:
   test-offlineimap:
