@@ -1,19 +1,40 @@
-name: aidrugdiscovery
-version: 1.0
-summary: Cross-Platform Benchmark
+name: AIdrugdiscovery # you probably want to 'snapcraft register <name>'
+#base: core18 # the base snap is the execution environment for this snap
+version: '1.0' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Batch image resizer with a GUI # 79 char long summary
 description: |
-  chemoinformatics toolkit
+  aidrugdiscovery
 
-confinement: devmode
-base: core18
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
 
-apps:
-  foo:
-    command: ./bmetoolkit
+
+architectures:
+  - build-on: [amd64, i386]
+    run-on: all
 
 parts:
-  foo:
-    source: .
+
+  main-part:
+    # See 'snapcraft plugins'
+    plugin: python
+    python-version: python3
+
+    stage-packages:
+      - python3-pil
+      - python3-gi
+
+  wrapper:
     plugin: dump
-    organize:
-            bmetoolkit: bmetoolkit
+    source: https://github.com/patrickchirdon/AIdrugdiscovery.git
+    source-type: git
+    after: [desktop-bmetoolkit]
+    prepare: |
+      chmod +x bmetoolkit
+
+
+
+apps:
+  openresizer:
+    command: desktop-launch $SNAP/bmetoolkit
+    plugs: [x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home]
