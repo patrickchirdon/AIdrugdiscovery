@@ -5,9 +5,8 @@ summary: Batch image resizer with a GUI # 79 char long summary
 description: |
   aidrugdiscovery
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slotshttps://github.com/patrickchirdon/AIdrugdiscovery/blob/master/snap/snapcraft.yaml
-
+grade: stable
+confinement: classic
 
 architectures:
   - build-on: i386
