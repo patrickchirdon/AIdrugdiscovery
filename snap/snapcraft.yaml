@@ -19,7 +19,7 @@ parts:
     plugin: dump
     stage-packages:
     - python
-    - conda
+    
 
 apps:
   aidrugdiscovery:
