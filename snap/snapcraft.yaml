@@ -1,30 +1,56 @@
-name: aidrugdiscovery
-version: "1"
-summary: chemoinformatics toolkit
-description: chemoinformatics toolkit
-base: core18
-grade: stable
-confinement: strict
+name: openresizer # you probably want to 'snapcraft register <name>'
+base: core18 # the base snap is the execution environment for this snap
+version: '1.0' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Batch image resizer with a GUI # 79 char long summary
+description: |
+  OpenResizer is an open-source batch image resizing software with a GUI.
+  It is designed to be fast and easy-to-use.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+icon: gui/icon.png
+
+architectures:
+  - build-on: [amd64, i386]
+    run-on: all
+
+
 parts:
+
   
-      
-  mainpart:
+  main-part:
+    # See 'snapcraft plugins'
     plugin: python
-    python-packages: 
-      -IPython
-      -PySimpleGUI
+    python-packages:
+      - pillow
+    stage-packages:
+      - python-gi
+   
+    
 
-
-  aidrugdiscovery:
+  openresizer:
     plugin: dump
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
-    override-build: |
-      ./bmetoolkit
-      snapcraftctl build
-  
-  
-  
+    after: [desktop-gtk3]
+    organize:
+      glade_files: bin/glade_files
+    override-build:
+      chmod +x bin/bmetoolkit1.0.sh
+
+
+plugs:
+ gnome-3-26-1604:
+   interface: content
+   target: gnome-platform
+   default-provider: gnome-3-26-1604:gnome-3-26-1604
+
+
+apps:
+  openresizer:
+    command: desktop-launch $SNAP/bin/bmetoolkit1.0.sh
+    plugs: [gnome-3-26-1604, x11, unity7, pulseaudio, wayland, desktop, desktop-legacy, gsettings, home, removable-media]
   
   
   
