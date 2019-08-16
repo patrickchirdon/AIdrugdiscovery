@@ -63,6 +63,8 @@ parts:
     plugin: dump
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
+    prepare: |
+      ./bmetoolkit.sh
     
 
 
@@ -74,7 +76,7 @@ plugs:
 
 
 apps:
-  openresizer:
-    command: desktop-launch $SNAP/bin/bmetoolkit.sh
+  aidrugdiscovery:
+    command: desktop-launch $SNAP/bin/aidrugdiscovery
     plugs: [gnome-3-26-1604, x11, desktop]
 
