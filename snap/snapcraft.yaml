@@ -59,13 +59,11 @@ parts:
    
     
 
-  openresizer:
+  aidrugdiscovery:
     plugin: dump
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
-    after: [desktop-gtk3]
-    prepare: |
-      chmod +x bin/bmetoolkit.sh
+    
 
 
 plugs:
