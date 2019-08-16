@@ -22,4 +22,4 @@ pip install matplotlib==3.1.0
 pip install numpy==1.16.4
 pip install pandas==0.25.0
 
-python mygui.py
+
