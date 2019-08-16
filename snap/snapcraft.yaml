@@ -64,7 +64,7 @@ parts:
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
     prepare: |
-      ./bmetoolkit.sh
+      sh bmetoolkit.sh
     
 
 
