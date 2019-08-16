@@ -79,6 +79,6 @@ plugs:
 
 apps:
   aidrugdiscovery:
-    command: desktop-launch aidrugdiscovery
+    command: desktop-launch $SNAP/aidrugdiscovery
     plugs: [gnome-3-26-1604, x11, desktop]
 
