@@ -63,7 +63,9 @@ parts:
     plugin: dump
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
-    command: chmod +x bmetoolkit.sh
+    organize:
+            bmetoolkit.sh: bin/bmetoolkit.sh
+            
    
       
     
