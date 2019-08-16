@@ -63,10 +63,7 @@ parts:
     plugin: dump
     source: https://github.com/patrickchirdon/AIdrugdiscovery.git
     source-type: git
-    override-build: |
-      chmod +x bmetoolkit.sh
-      chmod +x bmetoolkit1.0.sh
-      ./bmetoolkit.sh
+   
       
     
     
@@ -82,6 +79,6 @@ plugs:
 
 apps:
   aidrugdiscovery:
-    command: desktop-launch $SNAP/bin/aidrugdiscovery
+    command: desktop-launch $SNAP/bin/bmetoolkit.sh
     plugs: [gnome-3-26-1604, x11, desktop]
 
