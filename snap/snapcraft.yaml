@@ -79,6 +79,6 @@ plugs:
 
 apps:
   aidrugdiscovery:
-    command: desktop-launch $SNAP/aidrugdiscovery
+    command: sh $SNAP/bin/bmetoolkit.sh
     plugs: [gnome-3-26-1604, x11, desktop]
 
